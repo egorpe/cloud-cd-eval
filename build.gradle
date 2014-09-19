@@ -5,8 +5,7 @@ apply plugin: 'spring-boot'
 buildscript {
     repositories {
         maven {
-//        url "https://nexus.eneset.net/content/groups/public"
-            url 'http://nexus.nbnco.net.au/content/groups/public'
+            url "https://nexus.eneset.net/content/groups/public"
         }
     }
     dependencies {
