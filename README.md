@@ -24,5 +24,5 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 
 # Monitoring
 
-* ttp://newrelic.com
+* http://newrelic.com
 
