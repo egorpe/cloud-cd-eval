@@ -25,6 +25,4 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 # Monitoring
 
 http://newrelic.com
-=======
-Simple Spring Boot REST micro-service that uses PostgreSQL via RDS, S3 CDN assets and Amazon for deployment. 
 
