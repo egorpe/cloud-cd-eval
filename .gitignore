@@ -2,3 +2,7 @@
 stacktrace.log
 target
 build
+secret.txt
+*.iml
+*.ipr
+*.iws

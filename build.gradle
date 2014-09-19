@@ -1,0 +1,66 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+buildscript {
+    repositories {
+        maven {
+//        url "https://nexus.eneset.net/content/groups/public"
+            url 'http://nexus.nbnco.net.au/content/groups/public'
+        }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE"
+        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+    }
+}
+
+idea {
+   module {
+      inheritOutputDirs = false
+      outputDir = file("$buildDir/classes/main/")
+  }
+}
+
+repositories {
+    maven {
+//        url "https://nexus.eneset.net/content/groups/public"
+        url "http://nexus.nbnco.net.au/content/groups/public"
+    }
+    maven {
+//        url "https://nexus.eneset.net/content/groups/public-snapshot"
+        url "http://nexus.nbnco.net.au/content/groups/public-snapshot"
+    }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.6'
+    compile 'org.grails:gorm-hibernate4-spring-boot:1.1.0.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.1.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc:1.1.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-actuator:1.1.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-remote-shell:1.1.6.RELEASE'
+    compile 'org.postgresql:postgresql:9.3-1102-jdbc41'
+    testCompile 'org.codehaus.groovy:groovy-all:2.3.6'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.3-SNAPSHOT'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+test.testLogging.exceptionFormat = 'full'
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
