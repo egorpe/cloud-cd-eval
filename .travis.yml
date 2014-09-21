@@ -2,7 +2,7 @@ language: groovy
 jdk:
 - oraclejdk8
 script:
-- "gradle clean build publish"
+- "./gradlew clean build publish"
 env:
   global:
   - secure: fw1/YqNpfGOu/7NcO07EV6O4GGfVknOhpPSS/daZYGVT/b5r4MOhngtqgn5OezRoFDGupkU1y3VLdy+Ynxn1tcyy/rGif92+0w7jfMzgefRkRIRneNQuA3tmuTFDRDZsl2wRoSmAYKv85iIIHsCQWMZ7/6bnwF+W4gz5QKj5iT0=
