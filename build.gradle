@@ -8,6 +8,8 @@ if (releaseVersion == null) {
     releaseVersion = 'devbuild'
 }
 
+println "Building ${releaseVersion}"
+
 group = 'com.proseotools'
 version = releaseVersion
 
