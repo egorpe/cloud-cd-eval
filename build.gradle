@@ -3,7 +3,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'maven-publish'
 
-def releaseVersion = System.getenv('TRAVIS_BUILD_NUMBER')
+def releaseVersion = System.getenv('BUILD_NUMBER')
 if (releaseVersion == null) {
     releaseVersion = 'devbuild'
 }
