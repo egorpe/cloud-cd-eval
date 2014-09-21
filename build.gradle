@@ -1,15 +1,28 @@
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'maven-publish'
+
+def releaseVersion = System.getenv('RELEASE_VERSION')
+if (releaseVersion == null) {
+    releaseVersion = 'devbuild'
+}
+
+group = 'com.proseotools'
+version = releaseVersion
 
 buildscript {
     repositories {
         maven {
-            url "https://nexus.eneset.net/content/groups/public"
+            url 'https://nexus.eneset.net/content/groups/public'
+            credentials {
+                username System.getenv('NEXUS_USER')
+                password System.getenv('NEXUS_PASSWORD')
+            }
         }
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE"
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE'
         classpath 'org.springframework:springloaded:1.2.0.RELEASE'
     }
 }
@@ -23,11 +36,26 @@ idea {
 
 repositories {
     maven {
-        url "https://nexus.eneset.net/content/groups/public"
+        url 'https://nexus.eneset.net/content/groups/public'
+        credentials {
+            username System.getenv('NEXUS_USER')
+            password System.getenv('NEXUS_PASSWORD')
+        }
     }
     maven {
-        url "https://nexus.eneset.net/content/groups/public-snapshot"
+        url 'https://nexus.eneset.net/content/groups/public-snapshot'
+        credentials {
+            username System.getenv('NEXUS_USER')
+            password System.getenv('NEXUS_PASSWORD')
+        }
     }
+}
+
+idea {
+   module {
+      inheritOutputDirs = false
+      outputDir = file("$buildDir/classes/main/")
+  }
 }
 
 dependencies {
@@ -60,4 +88,23 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 artifacts {
     archives sourcesJar
     archives javadocJar
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact jar
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+    repositories {
+        maven {
+            url 'https://nexus.eneset.net/content/repositories/releases'
+            credentials {
+                username System.getenv('NEXUS_USER')
+                password System.getenv('NEXUS_PASSWORD')
+            }
+        }
+    }
 }

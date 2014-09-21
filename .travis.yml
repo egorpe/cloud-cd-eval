@@ -1,0 +1,9 @@
+---
+language: groovy
+
+jdk:
+  - oraclejdk8
+
+script:
+  - ./gradlew clean
+  - ./gradlew build
