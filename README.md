@@ -18,7 +18,8 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 * https://buildbox.io<br>
   Pay to bring my own agents? You gotta be shitting me.
 * http://www.shippable.com
-* http://www.appveyor.com
+* http://www.appveyor.com<br>
+  Micro$oft Windows Server? I don't think so.
 * https://drone.io<br>
   Fast and cheap little bugger. 
 * http://wercker.com<br>
