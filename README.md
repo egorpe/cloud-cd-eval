@@ -14,7 +14,7 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 * https://circleci.com<br>
   Too slow for any real CI (I am not even thinking about CD)
 * https://semaphoreapp.com<br>
-  BitBucket is not supported. Only GitHub.
+  BitBucket is not supported. Only GitHub. Very slow.
 * https://buildbox.io<br>
   Pay to bring my own agents? You gotta be shitting me.
 * http://www.shippable.com
