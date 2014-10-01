@@ -8,7 +8,7 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 # CD Tools
 
 * https://travis-ci.com<br>
-  Ridiculously
+  Ridiculously expensive, rip off.
 * https://www.codeship.io<br>
   Nothing special. Butt ugly UI makes me wanna puke.
 * https://circleci.com<br>
