@@ -3,7 +3,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'maven-publish'
 
-def releaseVersion = System.getenv('BUILD_ID')
+def releaseVersion = System.getenv('SEMAPHORE_BUILD_NUMBER')
 if (releaseVersion == null) {
     releaseVersion = 'devbuild'
 }
