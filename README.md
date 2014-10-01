@@ -7,15 +7,20 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 
 # CD Tools
 
-* https://travis-ci.com
-* https://www.codeship.io
-* https://circleci.com
+* https://travis-ci.com<br>
+  Ridiculously
+* https://www.codeship.io<br>
+  Nothing special. Butt ugly UI makes me wanna puke.
+* https://circleci.com<br>
+  Too slow for any real CI (I am not even thinking about CD)
 * https://semaphoreapp.com
 * https://buildbox.io
 * http://www.shippable.com
 * http://www.appveyor.com
-* https://drone.io
-* http://wercker.com
+* https://drone.io<br>
+  Fast and cheap little bugger. 
+* http://wercker.com<br>
+  The best CD but stupid 25 minutes limit (no way to pay your way out of it)
 
 # Logging
 
