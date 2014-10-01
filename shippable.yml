@@ -1,0 +1,8 @@
+---
+build_environment: ubuntu1204
+language: java
+jdk:
+  - oraclejdk8
+env:
+  - secure: h+P05pAgO1QBVoL9xjA/ef2BHlhX9XkL7onc02DjHfcP3KF3DYlPLHYIyWIqfrbqc5U44ELux10wAnFABFAttfn48QtAiday624HoNlpOoNqYbfwIOZFOarhcCPR5Y8pIhmxWkC1zhVkOA37mVPfa8A12RuwmHoIoJAEgdRBqLLjK9dSur0avex1jo8UNzuT5LyFJi0H0JtdWpjTDrXeo9aqd93ru6USUxawM4pybTwqinVd+6gC3ofEwPi1x2KWZU+6U0B1iGeEAhuDWa//vqEDt9iC74Feh/YFy2l2ztcU/Gk0M9b4q53OnJIR3uWzYZDOuI3JfIKsu6i+a1hrmw==    
+script: ./gradlew clean build pubish
