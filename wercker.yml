@@ -13,4 +13,4 @@ build:
     - script:
         name: Run gradle
         code: |
-          ./gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build publish
+          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build publish
