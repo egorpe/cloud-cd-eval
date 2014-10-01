@@ -11,6 +11,6 @@ build:
           javac -version
     
     - script:
-        name: Run gradle
+        name: Run gradlew
         code: |
           ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build publish
