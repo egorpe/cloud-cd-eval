@@ -1,14 +1,16 @@
+
 box: mihkels/java8-oracle@0.0.1
 build:
   steps:
-  - script:
-    name: Show base information
-    code: |
-      gradle -v
-      echo $JAVA_HOME
-      java -version
-      javac -version
-  - script:
-      name: Run gradle
-      code: |
-        ./gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build publish
+    - script:
+        name: Show base information
+        code: |
+          gradle -v
+          echo $JAVA_HOME
+          java -version
+          javac -version
+    
+    - script:
+        name: Run gradle
+        code: |
+          ./gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR clean build publish
