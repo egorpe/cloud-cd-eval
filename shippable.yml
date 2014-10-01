@@ -4,7 +4,8 @@ language: java
 jdk:
   - oraclejdk8
 env:
-  - NEXUS_USER=robot
-  - secure: piLmWc4Tm3hd1vL4KZYQYCEjGOVAP12PIEk99pLxKNzWu3VLkzSoWKVlfuhkIO1cEYMw6fanwWKpj2f+XM9yZ/6sm7TeQc6ghY83dct/O31evZtmlAY4a1jwOdvvQhnvfYmmxYtdwH+rpcXkWYZ96O6QugMOf1ZtcEQBlbwL4o3Uj9swXXdy2DtpP/T/wuC5HM5pzboAaEaa17fBxV0vOYteBOiLMcN/2nJX25kgXqkWCKHCfafTcAEJKbuNP6Pv3cCbK9ZaWG7w+pwWKHYBVPvHivhuN68/QAowbnjn/Ch6oi57yJeMJT++zXfhU7pOfulm5I2HwTKfIx3aB/HVMQ==
+  global:
+    - NEXUS_USER=robot
+    - secure: piLmWc4Tm3hd1vL4KZYQYCEjGOVAP12PIEk99pLxKNzWu3VLkzSoWKVlfuhkIO1cEYMw6fanwWKpj2f+XM9yZ/6sm7TeQc6ghY83dct/O31evZtmlAY4a1jwOdvvQhnvfYmmxYtdwH+rpcXkWYZ96O6QugMOf1ZtcEQBlbwL4o3Uj9swXXdy2DtpP/T/wuC5HM5pzboAaEaa17fBxV0vOYteBOiLMcN/2nJX25kgXqkWCKHCfafTcAEJKbuNP6Pv3cCbK9ZaWG7w+pwWKHYBVPvHivhuN68/QAowbnjn/Ch6oi57yJeMJT++zXfhU7pOfulm5I2HwTKfIx3aB/HVMQ==
 
 script: ./gradlew clean build pubish
