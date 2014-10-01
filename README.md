@@ -8,12 +8,13 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
 # CD Tools
 
 * https://travis-ci.com<br>
-  Ridiculously expensive, rip off.
+  Ridiculously expensive, rip off. Only GitHub.
 * https://www.codeship.io<br>
   Nothing special. Butt ugly UI makes me wanna puke.
 * https://circleci.com<br>
   Too slow for any real CI (I am not even thinking about CD)
-* https://semaphoreapp.com
+* https://semaphoreapp.com<br>
+  BitBucket is not supported. Only GitHub.
 * https://buildbox.io<br>
   Pay to bring my own agents? You gotta be shitting me.
 * http://www.shippable.com
