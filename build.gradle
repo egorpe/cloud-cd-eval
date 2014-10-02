@@ -1,7 +1,4 @@
 apply plugin: 'groovy'
-apply plugin: 'idea'
-apply plugin: 'spring-boot'
-apply plugin: 'maven-publish'
 
 println "USER=${System.getenv('NEXUS_USER')}"
 println "PASS=${System.getenv('NEXUS_PASSWORD')}"
@@ -16,43 +13,8 @@ println "Building ${releaseVersion}"
 group = 'com.proseotools'
 version = releaseVersion
 
-buildscript {
-    repositories {
-        mavenCentral()
-        maven() {
-            url 'http://repo.spring.io/release/'
-        }
-        maven() {
-            url 'http://repo.spring.io/milestone/'
-        }
-        maven() {
-            url 'http://repo.spring.io/snapshot/'
-        }
-    }
-    dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.7.RELEASE'
-        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
-    }
-}
-
-idea {
-   module {
-      inheritOutputDirs = false
-      outputDir = file("$buildDir/classes/main/")
-  }
-}
-
 repositories {
     mavenCentral()
-    maven() {
-        url 'http://repo.spring.io/release/'
-    }
-    maven() {
-        url 'http://repo.spring.io/milestone/'
-    }
-    maven() {
-        url 'http://repo.spring.io/snapshot/'
-    }
 }
 
 idea {
@@ -63,52 +25,7 @@ idea {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.6'
-    compile 'org.grails:gorm-hibernate4-spring-boot:1.1.0.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-web:1.1.6.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-jdbc:1.1.6.RELEASE'
-    compile 'org.springframework.boot:spring-boot-actuator:1.1.6.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-remote-shell:1.1.6.RELEASE'
-    compile 'org.postgresql:postgresql:9.3-1102-jdbc41'
-    testCompile 'org.codehaus.groovy:groovy-all:2.3.6'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.3-SNAPSHOT'
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
-
-test.testLogging.exceptionFormat = 'full'
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-task javadocJar(type: Jar, dependsOn: groovydoc) {
-    classifier = 'javadoc'
-    from groovydoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            artifact jar
-            artifact sourcesJar
-            artifact javadocJar
-        }
-    }
-    repositories {
-        maven {
-            url 'https://nexus.eneset.net/content/repositories/releases'
-            credentials {
-                username System.getenv('NEXUS_USER')
-                password System.getenv('NEXUS_PASSWORD')
-            }
-        }
-    }
-}
