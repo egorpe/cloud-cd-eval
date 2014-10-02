@@ -1,7 +1,7 @@
 image: bradrydzewski/java:oraclejdk8
 evn:
   - NEXUS_USER={{nexusUser}}
-  - NEXUS_USER={{nexusPassword}}
+  - NEXUS_PASSWORD={{nexusPassword}}
 script:
   - ./gradlew build
   - ./gradlew publish
