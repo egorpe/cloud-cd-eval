@@ -18,7 +18,7 @@ version = releaseVersion
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         maven() {
             url 'http://repo.spring.io/release/'
         }
@@ -43,7 +43,7 @@ idea {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
     maven() {
         url 'http://repo.spring.io/release/'
     }
