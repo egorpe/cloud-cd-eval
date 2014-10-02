@@ -19,6 +19,9 @@ version = releaseVersion
 buildscript {
     repositories {
         jcenter()
+        maven() {
+            url 'http://repo.spring.io/release/'
+        }
     }
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE'
@@ -35,7 +38,9 @@ idea {
 
 repositories {
     jcenter()
-    
+    maven() {
+        url 'http://repo.spring.io/release/'
+    }
 }
 
 idea {
