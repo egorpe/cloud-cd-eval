@@ -3,6 +3,9 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'maven-publish'
 
+println "USER=${System.getenv('NEXUS_USER')}"
+println "PASS=${System.getenv('NEXUS_PASSWORD')}"
+
 def releaseVersion = System.getenv('BUILD_NUMBER')
 if (releaseVersion == null) {
     releaseVersion = 'devbuild'
