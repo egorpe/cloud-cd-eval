@@ -18,13 +18,7 @@ version = releaseVersion
 
 buildscript {
     repositories {
-        maven {
-            url 'https://nexus.eneset.net/content/groups/public'
-            credentials {
-                username System.getenv('NEXUS_USER')
-                password System.getenv('NEXUS_PASSWORD')
-            }
-        }
+        jcenter()
     }
     dependencies {
         classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE'
@@ -40,20 +34,8 @@ idea {
 }
 
 repositories {
-    maven {
-        url 'https://nexus.eneset.net/content/groups/public'
-        credentials {
-            username System.getenv('NEXUS_USER')
-            password System.getenv('NEXUS_PASSWORD')
-        }
-    }
-    maven {
-        url 'https://nexus.eneset.net/content/groups/public-snapshot'
-        credentials {
-            username System.getenv('NEXUS_USER')
-            password System.getenv('NEXUS_PASSWORD')
-        }
-    }
+    jcenter()
+    
 }
 
 idea {
