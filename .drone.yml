@@ -3,5 +3,5 @@ evn:
   - NEXUS_USER={{nexusUser}}
   - NEXUS_PASSWORD={{nexusPassword}}
 script:
-  - ./gradlew build
-  - ./gradlew publish
+  - gradle build
+  - gradle publish
