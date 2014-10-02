@@ -17,7 +17,7 @@ Simple Spring Boot REST micro-service that uses compose.io database, S3 CDN asse
   BitBucket is not supported. Only GitHub. Very slow.
 * https://buildbox.io<br>
   Pay to bring my own agents? You gotta be shitting me.
-* http://www.shippable.com
+* http://www.shippable.com<br>
   Hit the sweet spot. Will use it.
 * http://www.appveyor.com<br>
   Micro$oft Windows Server? I don't think so.
